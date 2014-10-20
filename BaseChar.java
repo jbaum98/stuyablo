@@ -32,6 +32,16 @@ public abstract class BaseChar {
     public int accuracyMod = 0;
     public int speedMod = 0;
 
+
+    //Constructors
+    public BaseChar() {
+	this.name = "DEFAULT";
+    }
+
+    public BaseChar(String n) {
+	this.name = n;
+    }
+
     //Mindless Getters
     public String getName() {
         return this.name;
