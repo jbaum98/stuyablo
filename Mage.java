@@ -1,40 +1,49 @@
-import java.util.*;
-
 public class Mage extends BaseChar {
-    //attributes
+  public Mage() {
+    this.mAttack  *= 1.50;
+    this.mDefense *= 1.50;
+    super();
+  }
 
-    //methods
-    public void Meditate(){
-	removeMana(30);
-	super.accuracyMod = 20;
-	super.mAttackMod = 20;
-    }
+  public Mage(String name) {
+    this.mAttack  *= 1.50;
+    this.mDefense *= 1.50;
+    super(name);
+  }
+  //attributes
 
-    public void Curse(BaseChar other){
-	removeMana(50);
-	other.speedMod = -20;
-	other.accuracyMod = -20;
-    }
+  //methods
+  public void Meditate(){
+    removeMana(30);
+    this.accuracyMod = 20;
+    this.mAttackMod = 20;
+  }
 
-    public void Surprise(BaseChar other){
-	int a = other.mDefenseMod;
-	removeMana(40);
-	other.mDefenseMod = -1*other.getMDefense();
-	baseAttack(other);
-	other.mDefenseMod = a;
-    }
+  public void Curse(BaseChar other){
+    removeMana(50);
+    other.speedMod = -20;
+    other.accuracyMod = -20;
+  }
 
-    public void doubleSpell(BaseChar other){
-        removeMana(20);
-	baseAttack(other);
-	baseAttack(other);
-    }
+  public void Surprise(BaseChar other){
+    int a = other.mDefenseMod;
+    removeMana(40);
+    other.mDefenseMod = -1*other.getMDefense();
+    baseAttack(other);
+    other.mDefenseMod = a;
+  }
 
-    public void Demolisher(BaseChar other){
-	removeMana(60);
-	this.mAttackMod = getMAttack();
-	baseAttack(other);
-	baseAttack(other); 
-	this.mAttackMod = 0;
-    }
+  public void doubleSpell(BaseChar other){
+    removeMana(20);
+    baseAttack(other);
+    baseAttack(other);
+  }
+
+  public void Demolisher(BaseChar other){
+    removeMana(60);
+    this.mAttackMod = getMAttack();
+    baseAttack(other);
+    baseAttack(other); 
+    this.mAttackMod = 0;
+  }
 }
