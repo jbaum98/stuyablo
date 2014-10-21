@@ -1,20 +1,22 @@
 public class Warrior extends BaseChar {
   public Warrior() {
       super();
-      this.pAttack  *= 1.50;
-      this.pDefense *= 1.50;
+      this.setPAttack(this.getPAttack() * 1.50);
+      this.setPDefense(this.getPAttack() * 1.50);
   }
 
   public Warrior(String name) {
       super();
-      this.pAttack  *= 1.50;
-      this.pDefense *= 1.50;
+      this.setPAttack(this.getPAttack() * 1.50);
+      this.setPDefense(this.getPAttack() * 1.50);
   }
   //attributes
 
   //methods
   public void getPumped(){
     removeMana(30);
+      this.setSpeedMod(this.getSpeedMod() + 20);
+      this.setPDefense(this.getPAttack() + 30);
     this.speedMod = 20;
     this.pAttackMod = 20;
   }
