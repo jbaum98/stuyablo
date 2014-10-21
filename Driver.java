@@ -5,43 +5,46 @@ public class Driver {
   public static void main (String[] args){
     Scanner sc = new Scanner(System.in);
     Random r = new Random();
-    String storage;
+    String line;
     Boolean running = true;
-    BaseChar player;
-    String ident=""
-    while (!done) {
+    String choice = ""; // needs an initial value otherwise Java worries it might not be set
+    while (running) {
 
       Boolean choosing = true;
 
       while (choosing) {
-        //creates player type
+        // creates player type
         System.out.println("Choose your class:");
-        System.out.println("\tm) Mage");
-        System.out.println("\tw) Warrior");
-        System.out.print("Your class:");
-        storage=sc.nextLine();
-        if (s.toLower().equals("warrior") || s.toLower().equals("w")) {
-          player = new Warrior();
-	  ident="w";
+        System.out.println("\tr: Rogue");
+        System.out.println("\tw: Warrior");
+        System.out.print("Your class: ");
+        line=sc.nextLine();
+        if (line.toLowerCase().equals("warrior") || line.toLowerCase().equals("w")) {
+          choice = "w";
           choosing = false;
-        } else if (s.toLower().equals("mage") || s.toLower().equals("m")) {
-          player = new Mage();
-	  ident="m";
+        } else if (line.toLowerCase().equals("rogue") || line.toLowerCase().equals("m")) {
+          choice = "r";
           choosing = false;
         } else {
-          System.out.println("Invalid name");
+          System.out.println("Invalid name\n");
         }
       }
 
-      //choosing name
-      System.out.print("Choose your name:");
-      s = sc.nextLine();
-      player.setName(s);
-      System.out.println("Welcome "+s);
+      // create player
+      BaseChar player;
+      if (choice.equals("w"))
+        player = new Warrior();
+      else // if (choice.equals("r")) // needs to be else otherwise Java worries it might not be set
+        player = new Rogue();
 
+      //choosing name
+      System.out.print("\nChoose your name: ");
+      line = sc.nextLine();
+      player.setName(line);
+      System.out.println("Welcome " + player);
+/*
       //Needs list of all possible actions to perform
       System.out.println("What would you like to do (LIST): ");
-      if (ident.equals("w")) {
 	  System.out.println("1: getPumped");
 	  System.out.println("2: Discombobulate");
 	  System.out.println("3: sneakAttack");
@@ -67,7 +70,6 @@ public class Driver {
 
       //Tedious if statements for computers action
 */
-
 
     }	    
   }
