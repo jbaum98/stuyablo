@@ -84,6 +84,30 @@ public abstract class BaseChar {
     public int getSpeed() {
         return this.speed + this.speedMod;
     }
+
+    public int getPAttackMod() {
+	return this.pAttackMod;
+    }
+
+    public int getPDefenseMod() {
+	return this.pDefenseMod;
+    }
+
+    public int getMAttackMod() {
+	return this.mAttackMod;
+    }
+
+    public int getMDefenseMod() {
+	return this.mDefenseMod;
+    }
+
+    public int getAccuracyMod() {
+	return this.accuracyMod;
+    }
+
+    public int getSpeedMod() {
+	return this.speedMod;
+    }
     
     //Formulas
     private int getMaxHealth() {
