@@ -41,7 +41,10 @@ public abstract class BaseChar {
     public BaseChar(String n) {
 	this.name = n;
     }
-
+  
+    public String toString() {
+      return this.name;
+    }
     //Mindless Getters
     public String getName() {
         return this.name;
