@@ -1,17 +1,17 @@
 public class Mage extends BaseChar {
   public Mage() {
-    this.mAttack  *= 1.50;
-    this.mDefense *= 1.50;
-    super();
+      super();
+      this.mAttack  *= 1.50;
+      this.mDefense *= 1.50;
   }
 
   public Mage(String name) {
-    this.mAttack  *= 1.50;
-    this.mDefense *= 1.50;
-    super(name);
-  }
+      super();
+      this.mAttack  *= 1.50;
+      this.mDefense *= 1.50;
+   }
   //attributes
-
+  
   //methods
   public void Meditate(){
     removeMana(30);

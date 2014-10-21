@@ -1,14 +1,14 @@
 public class Warrior extends BaseChar {
   public Warrior() {
-    this.pAttack  *= 1.50;
-    this.pDefense *= 1.50;
-    super();
+      super();
+      this.pAttack  *= 1.50;
+      this.pDefense *= 1.50;
   }
 
   public Warrior(String name) {
-    this.pAttack  *= 1.50;
-    this.pDefense *= 1.50;
-    super(name);
+      super();
+      this.pAttack  *= 1.50;
+      this.pDefense *= 1.50;
   }
   //attributes
 
