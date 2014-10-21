@@ -2,20 +2,6 @@ import java.util.*;
 import java.io.*;
 
 public class Driver {
-  //player vs. warrior
-  public void encounterWarrior(BaseChar player){
-    WarriorPC monster = new WarriorPC();
-    while (monster.getHealth()>0 || player.getHealth()>0) {
-      //encounter
-    }
-  }
-  //player vs. mage
-  public void encounterMage(BaseChar player){
-    MagePC monster = new MagePC();
-    while (monster.getHealth()>0 || player.getHealth()>0) {
-      //encounter
-    }
-  }
   public static void main (String[] args){
     Scanner sc = new Scanner(System.in);
     Random r = new Random();
@@ -32,12 +18,12 @@ public class Driver {
         System.out.println("Choose your class:");
         System.out.println("\tm) Mage");
         System.out.println("\tw) Warrior");
-        System.out.print("Your class:")
+        System.out.print("Your class:");
         storage=sc.nextLine();
         if (s.toLower().equals("warrior") || s.toLower().equals("w")) {
           player = new Warrior();
           choosing = false;
-        if (s.toLower().equals("mage") || s.toLower().equals("m")) {
+        } else if (s.toLower().equals("mage") || s.toLower().equals("m")) {
           player = new Mage();
           choosing = false;
         } else {
