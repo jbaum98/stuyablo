@@ -4,12 +4,12 @@ public abstract class BaseChar {
     
     //Attributes
     private String name = "";
-    
+    private int level = 1;
     private int health = 100;
     private int mana = 100;
     
     //Tools
-    private static int randomFromTo(int bottom, int top) {
+    public static int randomFromTo(int bottom, int top) {
         Random r = new Random();
         return r.nextInt(top-bottom) + bottom;
     }
@@ -95,7 +95,15 @@ public abstract class BaseChar {
     public void setName(String s){
 	this.name = s;
     }
-
+    public void setHealth(int n) {
+	this.health = n;
+    }
+    public void setMana(int n) {
+	this.mana = n;
+    }
+    public void setLevel(int n) {
+	this.level = n;
+    }
     public void addHealth(int h) {
         this.health += h;
         if ( this.health > this.getMaxHealth() )
