@@ -25,12 +25,12 @@ public abstract class BaseChar {
     private int speed = randomFromTo(40,60);
     
     //Attributes Modifiers
-    public int pAttackMod = 0;
-    public int pDefenseMod = 0;
-    public int mAttackMod = 0;
-    public int mDefenseMod = 0;
-    public int accuracyMod = 0;
-    public int speedMod = 0;
+    private int pAttackMod = 0;
+    private int pDefenseMod = 0;
+    private int mAttackMod = 0;
+    private int mDefenseMod = 0;
+    private int accuracyMod = 0;
+    private int speedMod = 0;
 
 
     //Constructors
@@ -123,7 +123,31 @@ public abstract class BaseChar {
     public void removeMana(int m) {
         this.addMana(-m);
     }
+
+    public void setPAttackMod(int n) {
+	this.pAttackMod = n;
+    }
+
+    public void setPDefenseMod(int n) {
+	this.pDefenseMod = n;
+    }
+
+    public void setMAttackMod(int n) {
+	this.mAttackMod = n;
+    }
+
+    public void setMDefenseMod(int n) {    
+	this.mDefenseMod = n;
+    }
+    public void setAccuracyMod(int n) {
+	this.accuracyMod = n;
+    }
+
+    public void setSpeedMod(int n) {
+	this.speedMod = n;
+    }
     
+
     //Attacks
     public void baseAttack(BaseChar other) {
         double defense = other.getPDefense() / 16 * (Math.random() + 1);
