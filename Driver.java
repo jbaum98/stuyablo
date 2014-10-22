@@ -197,7 +197,9 @@ public class Driver {
 		      compchoiceB = r.nextInt(7) + 1;
 		  }
 	      }
-	  }	    
+	  }
+	  System.out.println("You have "+player.getHealth()+" health and "+player.getMana()+" mana");
+	  System.out.println("Your opponent has "+CPU.getHealth()+" health and "+CPU.getMana()+" mana");
       }
     }
   }
