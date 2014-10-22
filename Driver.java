@@ -22,7 +22,7 @@ public class Driver {
         if (line.toLowerCase().equals("warrior") || line.toLowerCase().equals("w")) {
           choice = "w";
           choosing = false;
-        } else if (line.toLowerCase().equals("rogue") || line.toLowerCase().equals("m")) {
+        } else if (line.toLowerCase().equals("rogue") || line.toLowerCase().equals("r")) {
           choice = "r";
           choosing = false;
         } else {
@@ -36,32 +36,83 @@ public class Driver {
         player = new Warrior();
       else // if (choice.equals("r")) // needs to be else otherwise Java worries it might not be set
         player = new Rogue();
-
+      
       //choosing name
       System.out.print("\nChoose your name: ");
       line = sc.nextLine();
       player.setName(line);
       System.out.println("Welcome " + player);
-/*
-      //Needs list of all possible actions to perform
-      System.out.println("What would you like to do (LIST): ");
-	  System.out.println("1: getPumped");
-	  System.out.println("2: Discombobulate");
-	  System.out.println("3: sneakAttack");
-	  System.out.println("4: doubleStrike");
-	  System.out.println("5: Finisher");
-	  String playerchoice = sc.nextLine();
-	  //if (playerchoice.equals("1") {
-	  //	  if (player.getMana
-      }
-      else {
-	  System.out.println("1: Meditate");
-	  System.out.println("2: Curse");
-	  System.out.println("3: Surprise");
-	  System.out.println("4: doubleSpell");
-	  System.out.println("5: Demolisher");
-      }
+      
+      Boolean battle = true;
 
+      while (battle) {
+	  //needs to generate random opponent named 'opponent', handle turns
+	  //Needs list of all possible actions to perform
+	  System.out.println("What would you like to do (LIST): ");
+	  if (choice.equals("w")) {
+	      System.out.println("1: Revitalize");
+	      System.out.println("2: Get Pumped");
+	      System.out.println("3: Paralyzer");
+	      System.out.println("4: Ambush");
+	      System.out.println("5: Double Strike");
+	      System.out.println("6: Finisher");
+	      System.out.println("7: Special Warrior Attack");
+	  }
+	  else {
+	      System.out.println("1: Replenish");
+	      System.out.println("2: Meditate");
+	      System.out.println("3: Curse");
+	      System.out.println("4: Surprise");
+	      System.out.println("5: Double Strike");
+	      System.out.println("6: Demolisher");
+	      System.out.println("7: Special Rogue Attack");
+	  }
+	  String playerchoice = sc.nextLine();
+	  if (playerchoice.equals("1")) {
+	      player.rest();
+	  } else if (playerchoice.equals("2")) {
+	      if (player.getMana()>=30) {
+		  player.boost();
+	      } else {
+		  System.out.println("Not enough mana, try again");
+	      }
+	  } else if (playerchoice.equals("3")) {
+	      if (player.getMana()>=50) {
+		  player.stun(opponent);
+	      } else {
+		  System.out.println("Not enough mana, try again");
+	      }
+	  } else if (playerchoice.equals("4")) {
+	      if (player.getMana()>=40) {
+		  player.sneak(opponent);
+	      } else {
+		  System.out.println("Not enough mana, try again");
+	      }
+	  } else if (playerchoice.equals("5")) {
+	      if (player.getMana()>=20) {
+		  player.doubleStrike(opponent);
+	      } else {
+		  System.out.println("Not enough mana, try again");
+	      }
+	  } else if (playerchoice.equals("6")) {
+	      if (player.getMana()>=60) {
+		  player.superAttack(opponent);
+	      } else {
+		  System.out.println("Not enough mana, try again");
+	      }
+	  } else if (playerchoice.equals("7")) {
+	      if (player.getMana()>=80) {
+		  player.special(opponent);
+	      } else {
+		  System.out.println("Not enough mana, try again");
+	      }
+	  } else {
+	      System.out.println("invalid attack, try again");
+	  }
+      }      
+		    
+	      
+  
      
       //Tedious if statements for user side
       
@@ -69,7 +120,7 @@ public class Driver {
       int computerchoice = r.nextInt(9);
 
       //Tedious if statements for computers action
-*/
+
 
     }	    
   }
