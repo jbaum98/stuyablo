@@ -58,6 +58,9 @@ public class Driver {
       Boolean battle = true;
       
       while (battle) {
+	  if (player.getHealth() <= 0 || CPU.getHealth() <= 0) {
+	      battle = false;
+	  }
 	  //needs to generate random opponent named 'opponent', handle turns
 	  //Needs list of all possible actions to perform
 	  System.out.println("What would you like to do (LIST): ");
