@@ -1,3 +1,33 @@
+Getting This Repository To Show Up In Your HW Repo
+==================================================
+1. Enter your HW Repo
+```bash
+    cd apcs_hw
+```
+2. Clone the Stuyablo repo as a submodule
+```bash
+    git submodule add git@github.com:jbaum98/stuyablo 12-stuyablo
+```
+3. Now push the changes (you've added some files after all)
+```bash
+    git add --all
+    git commit -m 'added stuyablo submodule'
+    git push
+```
+4. Now to update it (pull) you do
+```bash
+    git submodule update
+```
+5. If you ever clone your HW repo again, you have to run this for git to realize there's a submodule
+```bash
+    git submodule init
+    git submodule update
+```
+More info: http://git-scm.com/book/en/Git-Tools-Submodules
+
+
+Changes
+=======
 Okay, so I changed a couple of things
 
 ### Protected Attributes
