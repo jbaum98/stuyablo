@@ -2,7 +2,7 @@ Getting This Repository To Show Up In Your HW Repo
 ==================================================
 1. Enter your HW Repo
 ```bash
-    cd <name-of-folder>
+    cd apcs_hw
 ```
 2. Clone the Stuyablo repo as a submodule
 ```bash
