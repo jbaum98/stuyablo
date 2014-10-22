@@ -1,5 +1,3 @@
-//=================================================================================================================================
-
 import java.util.*;
 import java.io.*;
 
@@ -59,7 +57,7 @@ public class Driver {
       
       while (battle) {
 	  if (player.getHealth() <= 0 || CPU.getHealth() <= 0) {
-	      battle = false;
+	      break;
 	  }
 	  //needs to generate random opponent named 'opponent', handle turns
 	  //Needs list of all possible actions to perform
