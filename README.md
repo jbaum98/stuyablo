@@ -10,6 +10,8 @@ Getting This Repository To Show Up In Your HW Repo
 ```
 3. Now push the changes (you've added some files after all)
 ```bash
+    git add --all
+    git commit -m 'added stuyablo submodule'
     git push
 ```
 4. Now to update it (pull) you do
