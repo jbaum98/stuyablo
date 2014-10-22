@@ -100,8 +100,8 @@ public abstract class BaseChar {
   }
 
   public void baseAttack(BaseChar other) {
-    double blocked = other.defense / 16 * (Math.random() + 1);
-    double damage = attack / 8 * (Math.random() + 1);
+      double blocked = (other.defense / 32 ) * (Math.random() + 1);
+      double damage = (attack / 2) * (Math.random() + 1);
     int net = (int)(damage - blocked);
     other.removeHealth(net);
   }
@@ -109,7 +109,7 @@ public abstract class BaseChar {
   public abstract void boost();
 
   public void stun(BaseChar other){
-    removeMana(50);
+    removeMana(30);
     other.speedMod -= 20;
     other.accuracyMod -= 20;
   }
