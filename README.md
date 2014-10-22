@@ -6,10 +6,13 @@ Getting This Repository To Show Up In Your HW Repo
 2. Clone the Stuyablo repo as a submodule
     git submodule add [git@github.com:jbaum98/stuyablo 12-stuyablo](git@github.com:jbaum98/stuyablo 12-stuyablo)
 
-3. Now to update it (pull) you do
+3. Now push the changes (you've added some files after all)
+    git push
+
+4. Now to update it (pull) you do
     git submodule update
 
-4. If you ever clone your HW repo again, you have to run this for git to realize there's a submodule
+5. If you ever clone your HW repo again, you have to run this for git to realize there's a submodule
     git submodule init
     git submodule update
 
