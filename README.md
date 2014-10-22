@@ -6,7 +6,7 @@ Getting This Repository To Show Up In Your HW Repo
 ```
 2. Clone the Stuyablo repo as a submodule
 ```bash
-    git submodule add [git@github.com:jbaum98/stuyablo 12-stuyablo](git@github.com:jbaum98/stuyablo 12-stuyablo)
+    git submodule add git@github.com:jbaum98/stuyablo 12-stuyablo
 ```
 3. Now push the changes (you've added some files after all)
 ```bash
