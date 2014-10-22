@@ -16,7 +16,7 @@ public abstract class BaseChar {
 
   //Battle Attributes
   protected int attack = randomFromTo(10,30);
-  protected int defense = randomFromTo(10,30);
+  protected int defense = randomFromTo(0,5);
   protected int accuracy = randomFromTo(60,80);
   protected int speed = randomFromTo(40,60);
 
