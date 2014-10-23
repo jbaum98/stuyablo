@@ -1,7 +1,7 @@
 public class Rogue extends BaseChar {
 
   protected void boostAttributes() {
-    defense *= 1.1;
+    defense *= 1.5;
     speed *= 1.5;
   }
 
@@ -14,7 +14,7 @@ public class Rogue extends BaseChar {
 
   public void special(BaseChar other) {
     removeMana(80);
-    int damage = (int) (attack / 4 * (Math.random() + 1));
+    int damage = (int) (Math.random()*attack / 2);
     other.removeHealth(damage);
     addHealth(damage);
   }

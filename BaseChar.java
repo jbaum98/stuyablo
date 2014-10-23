@@ -16,7 +16,7 @@ public abstract class BaseChar {
 
   //Battle Attributes
   protected int attack = randomFromTo(10,30);
-  protected int defense = randomFromTo(0,5);
+  protected int defense = randomFromTo(10,30);
   protected int accuracy = randomFromTo(60,80);
   protected int speed = randomFromTo(40,60);
 
@@ -100,8 +100,8 @@ public abstract class BaseChar {
   }
 
   public void baseAttack(BaseChar other) {
-      double blocked = (other.defense / 32 ) * (Math.random() + 1);
-      double damage = (attack / 2) * (Math.random() + 1);
+    double blocked = other.defense / 16 * (Math.random() + 1);
+    double damage = attack;
     int net = (int)(damage - blocked);
     other.removeHealth(net);
   }
@@ -109,7 +109,7 @@ public abstract class BaseChar {
   public abstract void boost();
 
   public void stun(BaseChar other){
-    removeMana(30);
+    removeMana(50);
     other.speedMod -= 20;
     other.accuracyMod -= 20;
   }
@@ -119,7 +119,7 @@ public abstract class BaseChar {
     other.defenseMod -= other.defense; // makes total defense 0
     baseAttack(other);
     other.defenseMod += other.defense; // restore defenseMod
-  }
+}
 
   public void doubleAttack(BaseChar other) {
     removeMana(20);
